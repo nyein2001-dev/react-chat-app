@@ -4,15 +4,18 @@ import './App.css';
 import LoadingSpinner from './components/common/LoadingSpinner';
 import AppRoutes from './router/routes';
 import { UserProvider } from './context/UserContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 export default function App() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
-      <UserProvider>
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
-      </UserProvider>
+      <ThemeProvider>
+        <UserProvider>
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
+        </UserProvider>
+      </ThemeProvider>
     </Suspense>
   )
 }
