@@ -1,8 +1,8 @@
 import { useContext, createContext, useReducer, useCallback } from "react";
-import { RegisterData } from "../../models/auth/types";
-import { StoreState } from "../types";
-import { User } from "../../models/user/types";
-import { initialState, userReducer } from "./userReducer";
+import { RegisterData } from "../models/auth/types";
+import { StoreState } from "../store/types";
+import { User } from "../models/user/types";
+import { initialState, userReducer } from "../store/user/userReducer";
 
 interface UserContextType extends StoreState<User | null> {
     register: (data: RegisterData) => Promise<void>;

@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import LoadingSpinner from './components/common/LoadingSpinner';
 import AppRoutes from './router/routes';
-import { UserProvider } from './store/user/UserContext';
+import { UserProvider } from './context/UserContext';
 
 export default function App() {
   return (

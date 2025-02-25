@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useUser } from "../store/user/UserContext";
+import { useUser } from "../context/UserContext";
 import { auth } from "../utils/auth";
 
 export function useAuth() {
