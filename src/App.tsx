@@ -1,11 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import LoadingSpinner from './components/common/LoadingSpinner';
+import AppRoutes from './router/routes';
+import { UserProvider } from './store/user/UserContext';
 
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Suspense fallback={<LoadingSpinner />}>
+      <UserProvider>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </UserProvider>
+    </Suspense>
   )
 }
