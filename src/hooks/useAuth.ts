@@ -1,18 +1,25 @@
-import { useCallback } from "react";
-import { useUser } from "../context/UserContext";
-import { auth } from "../utils/auth";
+import { useCallback } from 'react';
+import { useUser } from '../store/user/UserContext';
+import { auth } from '../utils/auth';
+import { LoginData, RegisterData } from '../models/auth/types';
 
 export function useAuth() {
-    const { data: user, isLoading, register: userRegister } = useUser();
+  const { data: user, isLoading, login, logout, register: userRegister } = useUser();
 
-    const isAuthenticated = useCallback(() => {
-        return !!user && auth.isAuthenticated();
-    }, [user]);
+  const isAuthenticated = useCallback(() => {
+    return !!user && auth.isAuthenticated();
+  }, [user]);
 
-    return {
-        user,
-        isLoading,
-        isAuthenticated: isAuthenticated(),
-        register: userRegister,
-    };
-}
+  const register = async (data: RegisterData) => {
+    await userRegister(data);
+  };
+
+  return {
+    user,
+    isLoading,
+    isAuthenticated: isAuthenticated(),
+    login,
+    logout,
+    register: userRegister,
+  };
+} 

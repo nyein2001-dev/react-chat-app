@@ -1,0 +1,30 @@
+{
+  "app": {
+    "name": "Chat App",
+    "loading": "Loading...",
+    "error": {
+      "general": "Something went wrong",
+      "notFound": "Page not found",
+      "network": "Network error"
+    }
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "send": "Send",
+    "close": "Close"
+  },
+  "status": {
+    "online": "Online",
+    "offline": "Offline",
+    "away": "Away"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "system": "System theme"
+  }
+} 

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
-import { Theme, ThemeMode } from '../models/theme/types';
-import { darkTheme, lightTheme } from '../utils/theme';
+import { Theme, ThemeMode } from '../theme/types';
+import { lightTheme, darkTheme } from '../theme/themes';
 
 interface ThemeContextType {
   theme: Theme;
@@ -15,11 +15,10 @@ const THEME_STORAGE_KEY = 'app-theme-mode';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState<ThemeMode>(() => {
-    // Check localStorage first
+  
     const savedMode = localStorage.getItem(THEME_STORAGE_KEY) as ThemeMode | null;
     if (savedMode) return savedMode;
     
-    // Then check system preference
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
     }

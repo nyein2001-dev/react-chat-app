@@ -1,21 +1,29 @@
 export interface User {
-    id: string;
-    username: string;
-    email: string;
-    first_name: string;
-    last_name: string;
-    phone: string;
-    avatar_url: string | null;
-    status: 'online' | 'offline' | 'busy' | 'away' | 'invisible';
-    last_seen_at: string | null;
-    isverified: boolean;
-    is_active: boolean;
-    is_blocked: boolean;
-    isOnline: boolean;
-    settings: {
-        notifications: boolean;
-        theme: 'light' | 'dark';
-    };
-    created_at: string;
-    updated_at: string;
+  id: number;
+  username: string;
+  email: string;
+  first_name: string;
+  last_name: string;
+  phone: string;
+  avatar_url: string | null;
+  status: 'online' | 'offline';
+  last_seen_at: string | null;
+  is_verified: boolean;
+  is_active: boolean;
+  is_blocked: boolean;
+  isOnline: boolean;
+  settings: {
+    notifications: boolean;
+    theme: 'light' | 'dark';
+  };
+  created_at: string;
+  updated_at: string;
 }
+
+export interface UserProfile extends Omit<User, 'id'> {
+  firstName?: string;
+  lastName?: string;
+  bio?: string;
+}
+
+export type UserStatus = 'online' | 'offline' | 'away'; 

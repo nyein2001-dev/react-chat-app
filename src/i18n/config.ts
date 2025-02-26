@@ -17,7 +17,7 @@ i18n
     },
     
     backend: {
-      loadPath: '/locales/{{lng}}.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     
     defaultNS: 'common',

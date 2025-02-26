@@ -1,0 +1,23 @@
+{
+  "chat": {
+    "title": "Chats",
+    "recentChats": "Recent Chats",
+    "createNew": "Create New Chat",
+    "searchPlaceholder": "Search conversations...",
+    "noConversations": "No conversations found",
+    "loading": "Loading...",
+    "loadMore": "Load More",
+    "selectToStart": "Select a conversation to start chatting",
+    "messagePlaceholder": "Type a message here",
+    "noMessages": "No messages yet",
+    "participants": "{{count}} participants",
+    "online": "online",
+    "lastSeen": "last seen {{time}}",
+    "edited": "(edited)",
+    "replyingTo": "Replying to message {{id}}"
+  },
+  "errors": {
+    "loadConversations": "Failed to load conversations",
+    "loadMessages": "Failed to load messages"
+  }
+} 
